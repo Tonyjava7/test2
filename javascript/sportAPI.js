@@ -74,7 +74,7 @@ function seasonsStats() {
 
 //update the dom with a bootstrap card showing stats for the team
 
-		$("#statCards").prepend("<div class='card statCard'><div class='card-body '><h5>"+market+" "+name+"</h5><p>Average : </p><p>  Points per Game:"+ppg+" Rebounds:"+rebound+" Turnovers:"+turn+"</p><p>Roster : </p><p>"+rosterSpace+"</p></div></div>");
+		$("#statCards").prepend("<div class='card statCard'><div class='card-body '><h5>"+market+" "+name+"</h5><p>  Points per Game: "+ppg+"</p><p> Rebounds per Game: "+rebound+"</p><p> Turnovers per Game: "+turn+"</p><p>Roster : </p><p>"+rosterSpace+"</p></div></div>");
 
 });
 }
