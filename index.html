@@ -6,13 +6,15 @@
     <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/geocodeLogan.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="javascript/logic.js"></script>
     <script src="javascript/sportAPI.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <title>SWIRLFI</title>
+    <title>Swirlifi</title>
 
 </head>
 
@@ -20,18 +22,18 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark top-nav">
         <!-- Brand/logo -->
-        <a class="navbar-brand" data-name="our_brand" href="#">SWIRLFI</a>
+        <a class="navbar-brand" data-name="our_brand" href="#">Swirlifi</a>
         <img id="logo" src="images/swirl-green.png">
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-name="event_screen_nav" id="event_btn" href="#">Events</a>
+                <a class="nav-link" data-name="event_screen_nav" id="event_btn" href="#">Cities</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-name="picture_screen_nav" id="picture_btn" href="#">Photographs</a>
+                <a class="nav-link" data-name="picture_screen_nav" id="picture_btn" href="#">Pics</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-name="stats_screen_nav" id="stats_btn" href="#">Statistics</a>
+                <a class="nav-link" data-name="stats_screen_nav" id="stats_btn" href="#">Stats</a>
             </li>
         </ul>
     </nav>
@@ -43,9 +45,8 @@
                 <br>
                 <!-- Jumbotron Title -->
                 <div class="jumbotron">
-                    <h1 class="text-center">Our Event Project</h1>
-                    <h3 class="text-center">Should we have a background picture?</h3>
-                    <p class="text-center">Note: <i>ALL the data in the table is for demonstration only.</i></p>
+                    <h1 class="text-center">Bringing Fans Together</h1>
+                    <h4 class="text-center"><em>one pic at a time!</em></h4>
                 </div>
             </div>
         </div>
@@ -123,7 +124,6 @@
         <div class="row">
 
           <div class="mainDiv" align="right">
-        <h1 align="left">Firebase File Upload</h1>
         <progress id="uploader" value="0" max="100">0%</progress>
         <input type="file" id="fileButton" value="upload" />
 </div>
@@ -146,22 +146,22 @@
             <div class="col-md-12">
                 <br>
                 <!-- Jumbotron Title -->
-                <div class="jumbotron headPhoto">
+                <!-- <div class="jumbotron headPhoto">
                     <h1 class="text-center"></h1>
                     <h3 class="text-center">Here ya go, Candace!!</h3>
 
-                </div>
+                </div> -->
             </div>
         </div>
 
          <!-- Quick form for the user to lookup team information  -->
     <form>
         <div class="form-group">
-            <label for="exampleInputEmail1">Want to see another team? </label>
+            <label for="exampleInputEmail1">Who's stats would you like to see? </label>
              <input type="text" class="form-control" id="userInputCity" aria-describedby="emailHelp" placeholder="city name" value ="">
         </div>
 
-           <button id=btn2>submit team name</button>
+           <button class="btn btn-default" id=btn2>Submit</button>
            <!-- cards with team info -->
     <div id="statCards"> </div>
 

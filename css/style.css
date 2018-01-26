@@ -1,3 +1,23 @@
+body {
+  background: linear-gradient(#E5E4E2, #D1D0CE) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.jumbotron {
+  border-radius: 10px;
+  height: 75%;
+  object-fit: contain;
+  background-image: url("../images/crowdPhone.jpeg");
+  font-family: "Open Sans";
+  color: black;
+}
+
+.navbar-brand {
+  font-family: "Yellowtail";
+  font-size: 3em;
+}
+
+
 #logo {
     height: 3em;
     width: 3em;
