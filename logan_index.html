@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="javascript/geocodeLogan.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="javascript/logic.js"></script>
+  <script src="javascript/sportAPI.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <title>Our Event Project</title>
+</head>
+
+<body>
+
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark top-nav">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" data-name="our_brand" href="#">Our Brand</a>
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-name="event_screen_nav" id="event_btn" href="#">Events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-name="picture_screen_nav" id="picture_btn" href="#">Photographs</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" data-name="stats_screen_nav" id="stats_btn" href="#">Statistics</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container screen" id = "table_screen">
+	 <div class="row">
+	 	 <div class="col-md-12">
+
+<br>
+	<!-- Jumbotron Title -->
+    <div class="jumbotron">
+    	<h1 class="text-center">Our Event Project</h1>
+    	<h3 class="text-center">Should we have a background picture?</h3>
+    	<p class="text-center">Note:  <i>ALL the data in the table is for demonstration only.</i></p>
+    </div>
+</div>
+</div>
+
+    <div class="container">
+    	<div class="row">
+	 	 <div class="col-md-12">
+
+        <table class="table">
+            <thead>
+                <tr>
+                 	<th scope="col">Date</th>
+                 	<th scope="col">Time</th>
+                 	<th scope="col">City</th>
+                 	<th scope="col">Picture Count</th>
+                </tr>
+            </thead>
+            <tbody class="eventTable">
+            	<!-- Replace ALL the stuff in the table body with javascript stuff -->
+            	<tr data-city: "Chicago">
+            		<td>
+            			01/08/2018
+            		</td>
+            		<td>
+            			8:00 PM
+            		</td>
+            		<td>
+            			Chicago, IL
+            		</td>
+            		<td>
+            			25
+            		</td>
+            	</tr>
+							<tr data-city: "New York">
+            		<td>
+            			01/15/2018
+            		</td>
+            		<td>
+            			6:14 PM
+            		</td>
+            		<td>
+            			New York, NY
+            		</td>
+            		<td>
+            			32
+            		</td>
+            	</tr>
+							<tr data-city: "Phoenix">
+            		<td>
+            			01/19/2018
+            		</td>
+            		<td>
+            			11:52 AM
+            		</td>
+            		<td>
+            			Phoenix, AZ
+            		</td>
+            		<td>
+            			14
+            		</td>
+            	</tr>
+            </tbody>
+
+            </table>
+        </div>
+
+     </div>
+ </div>
+
+</div><!-- End of the table screen -->
+
+
+<div class="container screen" id = "picture_screen">
+<div class="row">
+<!-- <div class="col-md-12">
+	<br>
+	<label for="upload_btn">
+        <h3>Upload a Picture</h3>
+    </label>
+    <button id="upload_btn">Upload</button>
+</div> -->
+<div class="mainDiv" align="right">
+		<h1 align="left">Firebase File Upload</h1>
+		<progress id="uploader" value="0" max="100">0%</progress>
+		<input type="file" id="fileButton" value="upload" />
+</div>
+
+
+</div>
+
+<form role="form" id="photo-form">
+	<div class="form-group">
+		<input class="form-control" id="photo-input" type="text">
+	</div>
+	<button class="btn btn-default" id="add-photo" type="submit"><img src="images/camera.png" id="camera"></button><hr>
+</form>
+<div class = "row">
+	<div class="col-md-12" id="well">
+	</div>
+</div>
+
+<!-- <div class = "row">
+	<div class="col-md-12">
+        <img src="images/screen1.jpeg" class = "photo" alt="picture three" height = "400">
+        <img src="images/screen2.jpeg" class = "photo" alt="picture four" width = "400">
+    </div>
+</div> -->
+</div>
+</div>
+</div><!-- End of picture screen -->
+
+
+<div class="container screen" id = "stats_screen">
+     <div class="row">
+         <div class="col-md-12">
+            <br>
+    <!-- Jumbotron Title -->
+    <div class="jumbotron">
+        <h1 class="text-center">Our Stats Screen</h1>
+        <h3 class="text-center">Here ya go, Candace!!</h3>
+
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
