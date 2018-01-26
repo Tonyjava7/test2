@@ -8,11 +8,11 @@ $(document).ready(function(){
     storageBucket: "test-project-d958e.appspot.com",
     messagingSenderId: "496730470430"
   };
-
   firebase.initializeApp(config);
 
   var city = "";
   var state = "";
+
   //geolocator starts here
   var key = "a9a61bb81ae8bbec";
   navigator.geolocation.getCurrentPosition(success, error);
@@ -26,29 +26,7 @@ $(document).ready(function(){
           city = data.location.city;
           state = data.location.state;
 
-
-
-        //Firebase Storage
-        // var uploader = document.getElementById('uploader');
-        // var fileButton = document.getElementById('fileButton');
-        // fileButton.addEventListener('change', function(e) {
-        //     var file = e.target.files[0];
-        //     var storageRef = firebase.storage().ref('img/' + file.name);
-        //     var metadata = {
-        //         customMetadata: {
-        //             'city': city
-        //         }
-        //     }
-        //     var task = storageRef.put(file, metadata);
-        //     task.on('state_changed', function progress(snapshot) {
-        //         var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        //         uploader.value = percentage;
-        //     }, function error(err) {
-        //     }, function complete() {
-        //     });
-        // });
-
-        // Download starts here
+        // Push to DATABASE
         var dataRef = firebase.database();
         var photo = "";
 
@@ -62,27 +40,19 @@ $(document).ready(function(){
         var uploader = document.getElementById('uploader');
         var fileButton = document.getElementById('fileButton');
 
-        $("#fileButton").on("click", function () {
-
-
-          // photo = $("#photo-input").val().trim();
+        function tableFunction() {
           time = moment(moment()).format("hh:mm A");
           date = moment().format("L");
 
           dataRef.ref().push({
-            // photo: photo,
             city: city,
             state: state,
             time: time,
             date: date
-
           });
-        });
-
-
+        };
 
         dataRef.ref().on("child_added", function (snapshot) {
-
           if (array.indexOf(city) === -1) {
             array.push(city);
             $(".eventTable").append("<tr><td id='date'>"+snapshot.val().date+
@@ -94,19 +64,13 @@ $(document).ready(function(){
             $("#date").html(snapshot.val().date);
             $("#time").html(snapshot.val().time);
             }
-
-
-
-          // $("#well").prepend("<img src="+snapshot.val().photo+" class='photos'>")
-
-
         });
 
+        // Push to STORAGE
         fileButton.addEventListener('change', function(e) {
             event.preventDefault();
             var file = e.target.files[0];
             var dataRef = storageRef.ref('img/' + file.name);
-
             var metadata = {
                 customMetadata: {
                     'city': city
@@ -116,26 +80,13 @@ $(document).ready(function(){
             task.on('state_changed', function progress(snapshot) {
                     var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                     uploader.value = percentage;
-
                 }, function error(err) {}, function complete() {
-                    // var dataRef = storageRef.ref('img/' + file.name);
                     var downloadURL = task.snapshot.downloadURL;
                     $('#well').prepend('<img class="photos" src=' + downloadURL + '>');
-                    // dataRef.getMetadata().then(function(metadata) {
-
+                    tableFunction();
                     });
 
-                })
-
-
-
-
+                });
       });
   };
-  //geolocator ends here
-
-  // Initialize Firebase
-
-
-
 });
