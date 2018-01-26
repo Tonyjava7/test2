@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(#E5E4E2, #D1D0CE) no-repeat center center fixed;
+  background: linear-gradient(#F5F4F2, #D1D0CE) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -10,6 +10,8 @@ body {
   background-image: url("../images/crowdPhone.jpeg");
   font-family: "Open Sans";
   color: black;
+  border: 2px solid black;
+  box-shadow: 5px 5px 20px gray;
 }
 
 .navbar-brand {
@@ -75,4 +77,18 @@ body {
 #camera {
 	height: 2em;
 	width: 4em;
+}
+
+#well {
+  margin-top: 20px;
+  background-color: white;
+  border: 3px solid black;
+  height: 1000px;
+  width: 70%;
+  border-radius: 5px;
+  background-image: url("../images/background_image.png");
+}
+
+.photoBar {
+  margin-top: 20px;
 }
