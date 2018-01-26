@@ -112,7 +112,7 @@ var a = city.indexOf(userCity);
 	if (a === -1)
 	{
 		console.log("name not in database");
-		$("#statCards").prepend("<div class='card'>"+userCity+ " 'not found in database'</div>");
+		$("#statCards").prepend("<div class='card statCard'><div class='card-body'>"+userCity+ " 'not found in database'</div></div>");
 	}
 		else
         {
